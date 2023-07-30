@@ -92,9 +92,9 @@ CreateThread(function()
     local value = nil
 
     value = GetResourceKvpString('codexis-notif')
-    print(value)
     if value then
-        volme = value
+        value = json.decode(value)
+        parameters = value
     end
 end)
 
