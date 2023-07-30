@@ -1,5 +1,13 @@
-# codexis-notifications
- Notification system for fivem
+# Preview
+- Simple : https://streamable.com/5cj926
+- Job: https://streamable.com/r82liv
+
+# Informations
+Simple notification system with two type of notifications :
+- Simple notification
+- Job notification
+
+You will have to put your own image in the images folder for the job notification to work properly.
 
 # Usage
 - Simple notification
