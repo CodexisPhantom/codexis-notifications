@@ -35,4 +35,4 @@ exports['codexis-notifications']:JobNotification({
 ```
 
 # Credits
-Thanks to overextended for giving me some hints and better practice when I watch their code
+Thanks to overextended for giving me some hints and better code practice when I watch their code
