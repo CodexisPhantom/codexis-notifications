@@ -34,5 +34,26 @@ exports['codexis-notifications']:JobNotification({
 })
 ```
 
+# Snippets
+- From qb-core to mine, change the function `QBCore.Functions.Notify` in qb-core/client/functions.lua with :
+```lua
+function QBCore.Functions.Notify(text, texttype, length)
+    if type(text) == "table" then
+        local ttext = text.text or 'Placeholder'
+        exports['codexis-notifications']:Notification({
+           message = ttext,
+           type = texttype,
+           duration = length,
+        })
+    else
+        exports['codexis-notifications']:Notification({
+           message = text,
+           type = texttype,
+           duration = length,
+        })
+    end
+end
+```
+
 # Credits
 Thanks to overextended for giving me some hints and better code practice when I watch their code
