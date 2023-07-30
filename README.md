@@ -33,3 +33,6 @@ exports['codexis-notifications']:JobNotification({
    duration = 10000, -- default is 5000
 })
 ```
+
+# Credits
+Thanks to overextended for giving me some hints and better practice when I watch their code
