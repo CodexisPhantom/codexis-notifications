@@ -21,7 +21,7 @@ exports['codexis-notifications']:JobNotification({
    color = 'Burger Shot', -- required | Can be rgb or rgba or css color
    number = 'Burger Shot', -- not required | Can be rgb or rgba or css color
    message = '25% sale on all items', -- required
-   type = 'success', -- default is
+   type = 'information', -- default is information
    duration = 10000, -- default is 5000
 })
 ```
