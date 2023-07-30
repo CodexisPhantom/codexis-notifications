@@ -1,0 +1,45 @@
+{
+  "name": "ox_lib",
+  "version": "0.1.0",
+  "homepage": "web/build",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@mantine/core": "^6.0.17",
+    "@mantine/hooks": "^6.0.17",
+    "@vitejs/plugin-react": "^3.1.0",
+    "focus-trap-react": "^9.0.2",
+    "framer-motion": "^8.5.5",
+    "prettier": "^2.8.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.2",
+    "react-icons": "^4.10.1",
+    "remark-gfm": "^3.0.1",
+    "sass": "^1.64.0",
+    "typescript": "^4.9.5",
+    "use-sound": "^4.0.1",
+    "vite": "^4.4.6",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:game": "vite build --watch",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/plugin-syntax-flow": "^7.22.5",
+    "@babel/plugin-transform-react-jsx": "^7.22.5",
+    "@types/node": "^16.18.38",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "autoprefixer": "^10.4.14",
+    "cross-env": "^7.0.3",
+    "csstype": "^3.1.2",
+    "postcss": "^8.4.27",
+    "prop-types": "^15.8.1",
+    "rimraf": "^3.0.2"
+  }
+}
