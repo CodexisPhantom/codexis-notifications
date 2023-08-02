@@ -1,9 +1,3 @@
-local parameters = {
-    volme = config.volume,
-    useSoundJob = config.useSoundJob,
-    useSoundSimple = config.useSoundSimple,
-}
-
 ---@alias JobNotificationType 'opening' | 'information' | 'closing'
 ---@alias SimpleNotificationType 'success' | 'error' | 'info' | 'debug'
 
@@ -88,83 +82,13 @@ function JobNotification(data)
 end
 exports('JobNotification', JobNotification)
 
-CreateThread(function()
-    local value = nil
-
-    value = GetResourceKvpString('codexis-notif')
-    print(value)
-    if value then
-        volme = value
-    end
-end)
-
 RegisterNUICallback('getConfig', function(_, cb)
     cb({
-        volme = parameters.volme,
-        useSoundJob = parameters.useSoundJob,
-        useSoundSimple = parameters.useSoundSimple,
+        volme = config.volume,
+        useSoundJob = config.useSoundJob,
+        useSoundSimple = config.useSoundSimple,
     })
 end)
-
-RegisterCommand('notifVolume', function(_, args, _)
-    if tonumber(args[1]) > 0.0 and tonumber(args[1]) <= 1.0 then
-        parameters.volme = tonumber(args[1])
-        SetResourceKvp('codexis-notif', json.encode(parameters))
-        Notification({
-            id = 'cdx-applied-changes',
-            message = config.translations[1],
-            type = 'success',
-            duration = 5000,
-        })
-    else
-        Notification({
-            id = 'cdx-applied-changes',
-            message = config.translations[2],
-            type = 'error',
-            duration = 5000,
-        })
-    end
-end, false)
-
-RegisterCommand('notifSoundJob', function(_, args, _)
-    if tonumber(args[1]) == 1 or tonumber(args[1]) == 0 then
-        parameters.useSoundJob = tonumber(args[1])
-        SetResourceKvp('codexis-notif', json.encode(parameters))
-        Notification({
-            id = 'cdx-applied-changes',
-            message = config.translations[1],
-            type = 'success',
-            duration = 5000,
-        })
-    else
-        Notification({
-            id = 'cdx-applied-changes',
-            message = config.translations[2],
-            type = 'error',
-            duration = 5000,
-        })
-    end
-end, false)
-
-RegisterCommand('notifSoundSimple', function(_, args, _)
-    if tonumber(args[1]) == 1 or tonumber(args[1]) == 0 then
-        parameters.useSoundSimple = tonumber(args[1])
-        SetResourceKvp('codexis-notif', json.encode(parameters))
-        Notification({
-            id = 'cdx-applied-changes',
-            message = config.translations[1],
-            type = 'success',
-            duration = 5000,
-        })
-    else
-        Notification({
-            id = 'cdx-applied-changes',
-            message = config.translations[2],
-            type = 'error',
-            duration = 5000,
-        })
-    end
-end, false)
 
 TriggerEvent('chat:addSuggestion', '/notifVolume', 'Change notification volume', {
     { name = "volume", help = "between 0.1 and 1.0" },
