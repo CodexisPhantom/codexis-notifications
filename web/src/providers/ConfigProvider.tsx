@@ -23,7 +23,6 @@ const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ children }) =
 
   useEffect(() => {
     fetchNui<Config>('getConfig').then((data) => {
-      console.log(data)
       setConfig(data)
     });
   }, []);
