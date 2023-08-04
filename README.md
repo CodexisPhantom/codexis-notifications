@@ -54,6 +54,18 @@ function QBCore.Functions.Notify(text, texttype, length)
     end
 end
 ```
+- From es_extended to mine, change the function `ESX.ShowNotification` in es_extended/client/functions.lua with :
+```lua
+function ESX.ShowNotification(message, type, length)
+    if GetResourceState("codexis-notifications") ~= "missing" then
+        return exports['codexis-notifications']:Notification({
+           message = message,
+           type = type,
+           duration = length,
+        })
+    end
+end
+```
 
 # Credits
 Thanks to overextended for giving me some hints and better code practice when I watch their code
