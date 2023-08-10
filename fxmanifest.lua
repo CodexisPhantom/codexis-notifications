@@ -14,6 +14,10 @@ client_scripts {
     'client.lua',
 }
 
+server_scripts {
+    'server.lua',
+}
+
 files {
 	'web/build/index.html',
 	'web/build/**/*',

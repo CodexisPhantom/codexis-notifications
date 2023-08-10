@@ -57,7 +57,6 @@ function Notification(data)
 
     SendReactMessage('simpleNotification', data)
 end
-exports('Notification', Notification)
 
 --- Job notification
 ---@param data JobNotification
@@ -80,7 +79,12 @@ function JobNotification(data)
 
     SendReactMessage('jobNotification', data)
 end
+
+exports('Notification', Notification)
 exports('JobNotification', JobNotification)
+
+RegisterNetEvent('codexis-notifications:client:simple', Notification)
+RegisterNetEvent('codexis-notifications:client:job', JobNotification)
 
 RegisterNUICallback('getConfig', function(_, cb)
     cb({
