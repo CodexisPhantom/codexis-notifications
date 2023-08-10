@@ -93,13 +93,3 @@ RegisterNUICallback('getConfig', function(_, cb)
         useSoundSimple = config.useSoundSimple,
     })
 end)
-
-TriggerEvent('chat:addSuggestion', '/notifVolume', 'Change notification volume', {
-    { name = "volume", help = "between 0.1 and 1.0" },
-})
-TriggerEvent('chat:addSuggestion', '/notifSoundJob', 'Enable simple notification sound', {
-    { name = "sound", help = "1 or 0" },
-})
-TriggerEvent('chat:addSuggestion', '/notifSoundSimple', 'Enable job notification sound', {
-    { name = "sound", help = "1 or 0" },
-})
